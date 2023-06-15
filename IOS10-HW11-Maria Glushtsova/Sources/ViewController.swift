@@ -10,6 +10,8 @@ import SnapKit
 
 class ViewController: UIViewController {
     
+    
+    
     // MARK: - Outlets
 
     // MARK: - Lifecycle
@@ -20,6 +22,7 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Setup
+    
     
     // MARK: - Actions
 
