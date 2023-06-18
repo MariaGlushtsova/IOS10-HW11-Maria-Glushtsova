@@ -46,7 +46,8 @@ class ViewController: UIViewController {
     }()
     
     private lazy var loginButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(pressedLogin), for: .touchUpInside)
         button.backgroundColor = UIColor(named: "green")
         button.layer.cornerRadius = 20
         button.setTitle("Login", for: .normal)
@@ -61,7 +62,8 @@ class ViewController: UIViewController {
     }()
     
     private lazy var forgotPasswordButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(pressedForgotPassword), for: .touchUpInside)
         button.setTitle("Forgot your password?", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
@@ -91,7 +93,8 @@ class ViewController: UIViewController {
     }()
     
     private lazy var facebookButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(pressedFacebook), for: .touchUpInside)
         button.setTitle("Facebook", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13)
@@ -107,7 +110,8 @@ class ViewController: UIViewController {
     }()
     
     private lazy var twitterButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(pressedTwitter), for: .touchUpInside)
         button.setTitle("Twitter", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13)
@@ -141,7 +145,8 @@ class ViewController: UIViewController {
     }()
     
     private lazy var signUpButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(pressedSingUp), for: .touchUpInside)
         button.setTitle("Sign Up", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
@@ -276,7 +281,25 @@ class ViewController: UIViewController {
     
     // MARK: - Actions
     
+    @objc private func pressedLogin() {
+       print("Successfully logged in")
+    }
     
+    @objc private func pressedForgotPassword() {
+       print("Enter your email")
+    }
+    
+    @objc private func pressedFacebook() {
+       print("Facebook starting page is opened")
+    }
+    
+    @objc private func pressedTwitter() {
+       print("Twitter starting page is opened")
+    }
+    
+    @objc private func pressedSingUp() {
+       print("Sing Up page is opened")
+    }
     
     }
 
