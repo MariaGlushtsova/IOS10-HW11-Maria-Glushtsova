@@ -8,27 +8,7 @@
 import UIKit
 import SnapKit
 
-extension UITextField {
-    func setLeftIcon(_ image: UIImage) {
-        let iconView = UIImageView(frame: CGRect(x: 30, y: 5, width: 20, height: 20))
-        iconView.image = image
-        let iconConteinerView: UIView = UIView(frame: CGRect(x: 20, y: 0, width: 30, height: 30))
-        iconConteinerView.addSubview(iconView)
-        leftView = iconConteinerView
-        leftViewMode = .always
-    }
-}
 
-extension UITextField {
-    func setRightIcon(_ image: UIImage) {
-        let iconView = UIImageView(frame: CGRect(x: -30, y: 5, width: 20, height: 20))
-        iconView.image = image
-        let iconConteinerView: UIView = UIView(frame: CGRect(x: 20, y: 0, width: 30, height: 30))
-        iconConteinerView.addSubview(iconView)
-        rightView = iconConteinerView
-        rightViewMode = .whileEditing
-    }
-}
 
 class ViewController: UIViewController {
     
@@ -66,14 +46,38 @@ class ViewController: UIViewController {
         passwordField.setRightIcon(UIImage(named: "check-mark") ?? UIImage())
         return passwordField
     }()
-
-
+    
+    private lazy var loginButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(named: "green")
+        button.layer.cornerRadius = 20
+        button.setTitle("Login", for: .normal)
+        button.setTitleColor(UIColor(named: "text color"), for: .normal)
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.3
+        button.layer.shadowOffset = .zero
+        button.layer.shadowRadius = 10
+        button.layer.shouldRasterize = true
+        button.layer.rasterizationScale = UIScreen.main.scale
+        return button
+    }()
+    
+    private lazy var forgotPasswordButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Forgot your password?", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        return button
+    }()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHierarchy()
         setupLayout()
+        
+        
     }
     
     // MARK: - Setup
@@ -82,7 +86,8 @@ class ViewController: UIViewController {
         view.addSubview(login)
         view.addSubview(loginField)
         view.addSubview(passwordField)
-//        view.addSubview(login)
+        view.addSubview(loginButton)
+        view.addSubview(forgotPasswordButton)
     }
     
     private func setupLayout() {
@@ -90,25 +95,66 @@ class ViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().inset(150)
         }
+        
         loginField.snp.makeConstraints { make in
             make.height.equalTo(40)
             make.width.equalTo(300)
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().inset(230)
         }
+        
         passwordField.snp.makeConstraints { make in
             make.height.equalTo(40)
             make.width.equalTo(300)
-            
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().inset(290)
         }
+        
+        loginButton.snp.makeConstraints { make in
+            make.height.equalTo(40)
+            make.width.equalTo(300)
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().inset(370)
+        }
+        
+        forgotPasswordButton.snp.makeConstraints { make in
+            make.height.equalTo(10)
+            make.width.equalTo(200)
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().inset(430)
+        }
+        
         
         
     }
     
     
+    
     // MARK: - Actions
+    
+    
+    
+    }
 
 
+extension UITextField {
+    func setLeftIcon(_ image: UIImage) {
+        let iconView = UIImageView(frame: CGRect(x: 30, y: 5, width: 20, height: 20))
+        iconView.image = image
+        let iconConteinerView: UIView = UIView(frame: CGRect(x: 20, y: 0, width: 30, height: 30))
+        iconConteinerView.addSubview(iconView)
+        leftView = iconConteinerView
+        leftViewMode = .always
+    }
+}
+
+extension UITextField {
+    func setRightIcon(_ image: UIImage) {
+        let iconView = UIImageView(frame: CGRect(x: -30, y: 5, width: 20, height: 20))
+        iconView.image = image
+        let iconConteinerView: UIView = UIView(frame: CGRect(x: 20, y: 0, width: 30, height: 30))
+        iconConteinerView.addSubview(iconView)
+        rightView = iconConteinerView
+        rightViewMode = .whileEditing
+    }
 }
