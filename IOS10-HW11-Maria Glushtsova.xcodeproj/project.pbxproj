@@ -13,6 +13,7 @@
 		842143582A3B723200B32529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842143562A3B723200B32529 /* Main.storyboard */; };
 		8421435A2A3B723400B32529 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842143592A3B723400B32529 /* Assets.xcassets */; };
 		8421435D2A3B723400B32529 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8421435B2A3B723400B32529 /* LaunchScreen.storyboard */; };
+		8421436B2A3B7D0400B32529 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8421436A2A3B7D0400B32529 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8421436B2A3B7D0400B32529 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +58,55 @@
 		8421434F2A3B723200B32529 /* IOS10-HW11-Maria Glushtsova */ = {
 			isa = PBXGroup;
 			children = (
-				842143502A3B723200B32529 /* AppDelegate.swift */,
-				842143522A3B723200B32529 /* SceneDelegate.swift */,
-				842143542A3B723200B32529 /* ViewController.swift */,
-				842143562A3B723200B32529 /* Main.storyboard */,
-				842143592A3B723400B32529 /* Assets.xcassets */,
-				8421435B2A3B723400B32529 /* LaunchScreen.storyboard */,
-				8421435E2A3B723400B32529 /* Info.plist */,
+				842143642A3B781900B32529 /* Resources */,
+				842143682A3B798F00B32529 /* Sources */,
 			);
 			path = "IOS10-HW11-Maria Glushtsova";
+			sourceTree = "<group>";
+		};
+		842143642A3B781900B32529 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				842143592A3B723400B32529 /* Assets.xcassets */,
+				842143652A3B784000B32529 /* Configuration */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		842143652A3B784000B32529 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				8421435E2A3B723400B32529 /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		842143662A3B786500B32529 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				842143502A3B723200B32529 /* AppDelegate.swift */,
+				842143522A3B723200B32529 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		842143672A3B796B00B32529 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				842143562A3B723200B32529 /* Main.storyboard */,
+				8421435B2A3B723400B32529 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		842143682A3B798F00B32529 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				842143542A3B723200B32529 /* ViewController.swift */,
+				842143672A3B796B00B32529 /* Storyboards */,
+				842143662A3B786500B32529 /* App */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +125,9 @@
 			dependencies = (
 			);
 			name = "IOS10-HW11-Maria Glushtsova";
+			packageProductDependencies = (
+				8421436A2A3B7D0400B32529 /* SnapKit */,
+			);
 			productName = "IOS10-HW11-Maria Glushtsova";
 			productReference = 8421434D2A3B723200B32529 /* IOS10-HW11-Maria Glushtsova.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +156,9 @@
 				Base,
 			);
 			mainGroup = 842143442A3B723200B32529;
+			packageReferences = (
+				842143692A3B7D0400B32529 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 8421434E2A3B723200B32529 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -356,6 +404,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		842143692A3B7D0400B32529 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8421436A2A3B7D0400B32529 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 842143692A3B7D0400B32529 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 842143452A3B723200B32529 /* Project object */;
 }
