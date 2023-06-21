@@ -186,69 +186,69 @@ class ViewController: UIViewController {
         
         login.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(150)
+            make.centerY.equalTo(view).offset(-270)
         }
         
         loginField.snp.makeConstraints { make in
             make.height.equalTo(40)
             make.width.equalTo(300)
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(230)
+            make.centerY.equalTo(login).offset(100)
         }
         
         passwordField.snp.makeConstraints { make in
             make.height.equalTo(40)
             make.width.equalTo(300)
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(290)
+            make.centerY.equalTo(loginField).offset(50)
         }
         
         loginButton.snp.makeConstraints { make in
             make.height.equalTo(40)
             make.width.equalTo(300)
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(370)
+            make.centerY.equalTo(passwordField).offset(100)
         }
         
         forgotPasswordButton.snp.makeConstraints { make in
             make.height.equalTo(10)
             make.width.equalTo(200)
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(430)
+            make.centerY.equalTo(loginButton).offset(40)
         }
         
         leftLine.snp.makeConstraints { make in
             make.height.equalTo(2)
             make.width.equalTo(80)
-            make.left.equalToSuperview().inset(50)
-            make.top.equalToSuperview().inset(635)
+            make.centerX.equalTo(connectWith).offset(-100)
+            make.centerY.equalTo(view).offset(180)
         }
 
         connectWith.snp.makeConstraints { make in
             make.height.equalTo(10)
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(630)
+            make.centerY.equalTo(view).offset(180)
         }
         
         rightLine.snp.makeConstraints { make in
             make.height.equalTo(2)
             make.width.equalTo(80)
-            make.right.equalToSuperview().inset(50)
-            make.top.equalToSuperview().inset(635)
+            make.centerX.equalTo(connectWith).offset(100)
+            make.centerY.equalTo(view).offset(180)
         }
         
         facebookButton.snp.makeConstraints { make in
             make.height.equalTo(40)
             make.width.equalTo(160)
-            make.left.equalToSuperview().inset(30)
-            make.top.equalToSuperview().inset(670)
+            make.centerX.equalTo(view).offset(-90)
+            make.centerY.equalTo(view).offset(240)
         }
         
         twitterButton.snp.makeConstraints { make in
             make.height.equalTo(40)
             make.width.equalTo(160)
-            make.right.equalToSuperview().inset(30)
-            make.top.equalToSuperview().inset(670)
+            make.centerX.equalTo(view).offset(90)
+            make.centerY.equalTo(view).offset(240)
         }
         
         facebookImage.snp.makeConstraints { make in
@@ -267,15 +267,15 @@ class ViewController: UIViewController {
         
         signUpLabel.snp.makeConstraints { make in
             make.height.equalTo(10)
-            make.left.equalToSuperview().inset(90)
-            make.top.equalToSuperview().inset(750)
+            make.centerX.equalTo(view).offset(-50)
+            make.centerY.equalTo(view).offset(300)
         }
 
         signUpButton.snp.makeConstraints { make in
             make.height.equalTo(10)
             make.width.equalTo(200)
-            make.left.equalToSuperview().inset(150)
-            make.top.equalToSuperview().inset(750)
+            make.centerX.equalTo(view).offset(50)
+            make.centerY.equalTo(view).offset(300)
         }
     }
     
